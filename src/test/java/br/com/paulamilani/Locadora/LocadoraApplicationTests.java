@@ -1,12 +1,15 @@
 package br.com.paulamilani.Locadora;
-
-import jdk.jfr.ContentType;
 import junit.framework.TestCase;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import static com.jayway.restassured.RestAssured.given;
+
+import static org.codehaus.groovy.tools.shell.util.Logger.io;
+import static org.hamcrest.Matchers.*;
+import org.junit.Test;
 
 import java.util.Objects;
 
@@ -25,8 +28,7 @@ public class LocadoraApplicationTests extends TestCase {
                 .when()
                 .get(uri)
                 .then()
-                .statusCode(200)
-                .contentType(ContentType.JSON);
+                .statusCode(200);
 
     }
 
